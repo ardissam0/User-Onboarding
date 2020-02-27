@@ -18,6 +18,10 @@ const FormForUser = ({ values, errors, touched, status }) => {
                     {touched.name && errors.name && (
                         <p className='errors'>{errors.name}</p>
                     )}
+                    <Field type='email' name='email' placeholder='Email:' />
+                    {touched.email && errors.email && (
+                        <p className='errors'>{errors.email}</p>
+                    )}
                     <Field type='password' name='password' placeholder='Password:' />
                     {touched.password && errors.password && (
                         <p className='errors'>{errors.password}</p>
@@ -31,7 +35,7 @@ const FormForUser = ({ values, errors, touched, status }) => {
                 </Form>
             </div>
             <div className='Signing'>
-                <h3>Welcome, {users.name}</h3>
+                <h3>Welcome, {users.name}.</h3>
                 { <ul key={users.id}>
                     <li>Name: {users.name}</li>
                     <li>Email: {users.email}</li>
